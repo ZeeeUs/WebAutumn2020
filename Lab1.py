@@ -43,9 +43,35 @@ def solver(a, b, c):
                 x4 = -sqrt(y2)
                 print("x1 = {}, x2 = {}, x3 = {}, x4 = {}".format(x1, x2, x3, x4))
 
-a = float(input())
-b = float(input())
-c = float(input())
+
+text = "Коэффициент введён неправильно, попробуйте снова"
+if len(sys.argv) == 4:
+    try:
+        a = float(sys.argv[1])
+        b = float(sys.argv[2])
+        c = float(sys.argv[3])
+    except:
+        print("Неправильно введены коэффициенты")
+        exit()
+else:
+    while 1:
+        try:
+            a = float(input())
+            break
+        except:
+            print(text)
+    while 1:
+        try:
+            b = float(input())
+            break
+        except:
+            print(text)
+    while 1:
+        try:
+            c = float(input())
+            break
+        except:
+            print(text)
 if a == 0 and b == 0 and c == 0:
     print("Бесконечное число корней")
 elif a == 0 and b == 0:
